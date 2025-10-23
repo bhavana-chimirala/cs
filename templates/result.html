@@ -16,12 +16,10 @@
   <p id="message"></p>
   <a href="/">Validate another email</a>
 
-  <!-- Server will fill these values into the template by string formatting -->
   <script>
-    // These variables will be replaced server-side
-    const email = "{{EMAIL}}";
-    const ok = {{OK}};   // true or false
-    const reason = "{{REASON}}";
+    const email = "{{ EMAIL }}";
+    const ok = {{ 'true' if OK else 'false' }};
+    const reason = "{{ REASON }}";
 
     const msg = document.getElementById('message');
     if (ok) {
