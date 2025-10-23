@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Email Validator</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    body { font-family: Arial, sans-serif; padding: 40px; max-width: 600px; margin:auto; }
+    input[type="email"] { width:100%; padding:10px; margin:8px 0; box-sizing:border-box; }
+    button { padding:10px 16px; }
+    .hint { color:#666; font-size:0.9rem; }
+  </style>
+</head>
+<body>
+  <h1>Email Validator</h1>
+  <p class="hint">Enter an email to validate its syntax (server-side check).</p>
+  <form action="/validate" method="post">
+    <label for="email">Email address</label>
+    <input id="email" name="email" type="email" placeholder="you@example.com" required />
+    <button type="submit">Validate</button>
+  </form>
+</body>
+</html>

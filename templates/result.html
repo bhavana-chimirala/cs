@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Validation Result</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    body { font-family: Arial, sans-serif; padding:40px; max-width:600px; margin:auto;}
+    .ok { color: green; }
+    .bad { color: red; }
+    a { display:inline-block; margin-top:20px; }
+  </style>
+</head>
+<body>
+  <h1>Validation Result</h1>
+  <p id="message"></p>
+  <a href="/">Validate another email</a>
+
+  <!-- Server will fill these values into the template by string formatting -->
+  <script>
+    // These variables will be replaced server-side
+    const email = "{{EMAIL}}";
+    const ok = {{OK}};   // true or false
+    const reason = "{{REASON}}";
+
+    const msg = document.getElementById('message');
+    if (ok) {
+      msg.innerHTML = `<strong class="ok">${email}</strong> looks valid. (${reason})`;
+    } else {
+      msg.innerHTML = `<strong class="bad">${email}</strong> is not valid. (${reason})`;
+    }
+  </script>
+</body>
+</html>
